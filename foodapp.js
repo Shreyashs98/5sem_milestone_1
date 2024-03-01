@@ -272,26 +272,6 @@ app.get("/get-food", async (req, res) => {
   }
 });
 
-// // Handle the POST request to add order
-// app.post("/add-order", async (req, res) => {
-//   try {
-//     const { foodId, userId, orderId, status, userAddressId, paymentMode } =
-//       req.body;
-//     const order = new Order({
-//       foodId,
-//       userId,
-//       orderId,
-//       status,
-//       userAddressId,
-//       paymentMode,
-//     });
-//     await order.save();
-//     res.json({ success: true, message: "Order added successfully" });
-//   } catch (error) {
-//     res.status(500).json({ error: "Internal Server Error" });
-//   }
-// });
-
 // Mock Payment Endpoint
 app.post("/mock-payment", async (req, res) => {
   try {
@@ -420,13 +400,9 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 app.post("/submit", upload.single("image"), async function (req, res) {
-  if (req.isAuthenticated()) {
-    console.log(req.body);
-    console.log(req.user, "user");
-    console.log(req.body.secret, "secret");
 
     try {
-      if (req.body && req.body.secret) {
+      if (req.body) {
         const feedback = parseInt(req.body.feedback, 10); // Assuming feedback is a number
 
         // Save image to the order collection (adjust based on your storage preference)
@@ -458,9 +434,7 @@ app.post("/submit", upload.single("image"), async function (req, res) {
       console.error(error);
       res.status(500).json({ error: "Internal Server Error" });
     }
-  } else {
-    res.status(401).json({ error: "Unauthorized" });
-  }
+  
 });
 
 // Start server
