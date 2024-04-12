@@ -40,5 +40,4 @@ const User = mongoose.model("User", userSchema);
 const Food = mongoose.model("Food", foodSchema);
 const Order = mongoose.model("Order", orderSchema);
 
-// Exporting as an object
 export { User, Food, Order };
