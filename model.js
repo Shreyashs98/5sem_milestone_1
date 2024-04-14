@@ -37,9 +37,7 @@ const orderSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 const User = mongoose.model("User", userSchema);
-
 const Food = mongoose.model("Food", foodSchema);
-
 const Order = mongoose.model("Order", orderSchema);
 
 export { User, Food, Order };
