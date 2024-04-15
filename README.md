@@ -35,6 +35,7 @@ Authentication is required for certain endpoints. Ensure that you are authentica
 - **Endpoint:** GET http://localhost:3000/get-food
 - **Sample Request:** http://localhost:3000/get-food
 
+
 ### 3. Add Order
 
 - **Endpoint:** POST http://localhost:3000/add-order
