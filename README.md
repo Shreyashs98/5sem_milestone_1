@@ -2,8 +2,7 @@
 
 ## Overview
 
-The FoodApp API provides endpoints for managing food items and orders. This documentation outlines the available endpoints, their functionalities, and sample requests.
-
+The FoodApp API provides endpoints for managing food items and orders.
 ## Getting Started
 
 To start the server, use the command `npm start`. The base URL for the API is `http://localhost:3000`. 
